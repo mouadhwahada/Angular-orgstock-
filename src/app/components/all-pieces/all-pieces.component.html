@@ -1,0 +1,40 @@
+<div class="container" *ngIf="pieces">
+    <h2>All Pieces</h2>
+    <button  class="save-Piece" routerLink="/piece">Add Piece</button>
+    <table class="user-table" border="1">
+        <thead>
+            <tr>
+                <th>Piece Name</th>
+                <th>Description</th>
+                <th>Piece State</th>
+                <th>Quantity</th>
+                <th>Date Added</th>
+                <th>Price</th>
+                <th>Supplier</th>
+                <th>Category Id</th>         
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let piece of pieces">
+                <td>{{piece.namePiece}}</td>
+                <td>{{piece.description}}</td>
+                <td>{{piece.pieceState}}</td>
+                <td>{{piece.quantity}}</td>
+                <td>{{piece.dateAdded}}</td>
+                <td>{{piece.price}}</td>
+                <td>{{piece.supplier}}</td>
+                <td>{{piece.id}}</td>
+               <!-- <td>{{getCategoryName(piece.categoryId)}}</td>  -->       
+                <td>
+                    <button class="save-Piece" routerLink="/piece/:id">Update</button>
+                    <button class="delete-Piece">Delete</button>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #emptyState>
+
+    </ng-template>
+</div>

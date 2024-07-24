@@ -1,0 +1,111 @@
+/* Conteneur principal */
+.container {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Titre */
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Bouton pour ajouter une pièce */
+.save-Category {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-Category:hover {
+    background-color: #45a049; /* Vert foncé */
+}
+
+/* Table */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* En-tête du tableau */
+.user-table thead {
+    background-color: #333;
+    color: white;
+}
+
+.user-table th {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Corps du tableau */
+.user-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.user-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Boutons dans le tableau */
+.user-table .nz-button {
+    margin-right: 5px;
+}
+
+.user-table .delete-Piece {
+    background-color: #f44336; /* Rouge */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-table .delete-Piece:hover {
+    background-color: #e53935; /* Rouge foncé */
+}
+
+/* Boutons de mise à jour */
+.update-button {
+    background-color: #007bff; /* Bleu */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px; /* Espace entre les boutons */
+}
+
+.update-button:hover {
+    background-color: #0056b3; /* Bleu foncé */
+}
+
+/* Bouton de suppression */
+.delete-button {
+    background-color: #f44336; /* Rouge */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #e53935; /* Rouge foncé */
+}

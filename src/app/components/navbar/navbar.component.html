@@ -1,0 +1,23 @@
+<div>
+    <nz-header class="main-header" nz-row nzType="flex" style="background-color: blue;">
+      <div class="logo">
+        <a style="color: white; margin-left: 50px; font-size: 18px; font-weight: bolder;" routerLink="/">Stock</a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/pieces" routerLinkActive="active">Show Pieces</a>
+        <a nz-button nzType="link" routerLink="/post" routerLinkActive="active">Post New Piece</a>
+      </div>
+    </nz-header>
+  
+    <nz-sider nzCollapsible nzBreakpoint="lg" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/pieces" routerLinkActive="active">Show Pieces</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/post" routerLinkActive="active">Post New Piece</a>
+        </li>
+      </ul>
+    </nz-sider>
+  </div>
+  

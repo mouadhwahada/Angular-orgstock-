@@ -1,0 +1,80 @@
+/* Style pour la conteneur */
+.container {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Style pour le titre */
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style pour les boutons */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.save-Category {
+    background-color: #4CAF50;
+}
+
+.save-Category:hover {
+    background-color: #45a049;
+}
+
+.save-Piece {
+    background-color: #008CBA;
+}
+
+.save-Piece:hover {
+    background-color: #007bb5;
+}
+
+.delete-Piece {
+    background-color: #f44336;
+}
+
+.delete-Piece:hover {
+    background-color: #d32f2f;
+}
+
+/* Style pour le tableau */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.user-table thead {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.user-table th {
+    border-bottom: 2px solid #ddd;
+}

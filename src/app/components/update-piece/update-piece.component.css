@@ -1,0 +1,58 @@
+/* CSS pour la classe container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* CSS pour le titre h2 */
+.container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* CSS pour le div contenant le label et l'input */
+.container div {
+    margin-bottom: 15px;
+}
+
+/* CSS pour le label */
+.container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* CSS pour l'input */
+.container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* CSS pour le bouton */
+.container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Couleur bleue pour le bouton */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+    background-color: #0056b3; /* Couleur bleue plus foncée pour le survol */
+}

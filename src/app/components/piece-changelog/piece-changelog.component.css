@@ -1,0 +1,19 @@
+.container {
+    margin: 20px;
+  }
+  
+  .change-log-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .change-log-table th, .change-log-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .change-log-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  

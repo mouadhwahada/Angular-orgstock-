@@ -1,0 +1,19 @@
+<div class="container"> 
+    <h2>Update Piece</h2>
+    <form [formGroup]="updatePieceForm" (ngSubmit)="updatePiece()">
+        <div>
+            <label for="pieceState">Piece State</label>
+            <select id="pieceState" formControlName="pieceState">
+                <option value="" disabled>Select State</option>
+                <option value="SOLD">SOLD</option>
+                <option value="IN_STOCK">IN STOCK</option>
+                <option value="OUT_OF_STOCK">OUT OF STOCK</option>
+            </select>
+        </div>
+        <div>
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity" formControlName="quantity">
+        </div>
+        <button type="submit">Update Piece</button>
+    </form>
+</div>
