@@ -1,0 +1,80 @@
+<!--<div>
+    <h2>Sell a Piece</h2>
+    <form (ngSubmit)="sellPiece()">
+      <div>
+        <label for="pieceId">Piece ID:</label>
+        <input type="number" [(ngModel)]="pieceId" name="pieceId" required>
+      </div>
+      <div>
+        <label for="quantitySold">Quantity Sold:</label>
+        <input type="number" [(ngModel)]="quantitySold" name="quantitySold" required>
+      </div>
+      <div>
+        <label for="clientCin">Client CIN:</label>
+        <input type="text" [(ngModel)]="clientCin" name="clientCin" required>
+      </div>
+      <button type="submit">Sell Piece</button>
+    </form>
+  </div>-->
+
+  <!-- piece-sale.component.html -->
+<!-- piece-sale.component.html -->
+ <!--
+<div class="container">
+  <h2>Sales by Client CIN</h2>
+  <div>
+    <input type="text" [(ngModel)]="clientCin" placeholder="Enter Client CIN" />
+    <button (click)="searchSales()">Search</button>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  <table *ngIf="sales.length > 0" class="sales-table">
+    <thead>
+      <tr>
+        <th>Sale Date</th>
+        <th>Piece</th>
+        <th>Quantity Sold</th>
+        <th>Antecedent ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sales">
+        <td>{{ sale.saleDate }}</td>
+        <td>{{ sale.piece?.name || 'N/A' }}</td> 
+        <td>{{ sale.quantitySold }}</td>
+        <td>{{ sale.antecedentId }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>-->
+
+<!-- src/app/components/piece-sale/piece-sale.component.html -->
+<!-- src/app/components/piece-sale/piece-sale.component.html -->
+<form [formGroup]="saleForm" (ngSubmit)="submitSale()">
+  <div>
+    <label for="pieceName">Piece Name:</label>
+    <select formControlName="pieceName" id="pieceName" required>
+      <option *ngFor="let piece of pieces" [value]="piece.namePiece">{{ piece.namePiece }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="quantitySold">Quantity Sold:</label>
+    <input type="number" formControlName="quantitySold" min="1" id="quantitySold" />
+  </div>
+
+  <div>
+    <label for="clientCin">Client CIN:</label>
+    <input type="text" formControlName="clientCin" id="clientCin" />
+  </div>
+
+  <button type="submit" nz-button nzType="primary">Submit Sale</button>
+</form>
+
+<div *ngIf="sales.length > 0">
+  <h3>Sales History for Client {{ clientCin }}</h3>
+  <ul>
+    <li *ngFor="let sale of sales">{{ sale | json }}</li>
+  </ul>
+</div>

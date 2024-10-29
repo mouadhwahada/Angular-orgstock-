@@ -9,11 +9,12 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NavComponent } from "../nav/nav.component";
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [CommonModule,RouterModule, FormsModule, NzSpinModule, NzFormModule, NzButtonModule, NzGridModule, NzInputModule, NzSelectModule],
+  imports: [CommonModule, RouterModule, FormsModule, NzSpinModule, NzFormModule, NzButtonModule, NzGridModule, NzInputModule, NzSelectModule, NavComponent],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })

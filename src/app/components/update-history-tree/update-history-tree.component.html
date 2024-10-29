@@ -1,0 +1,28 @@
+
+<div style="margin-top: 20px;">
+  <h2>Update History</h2>
+  <form nz-form (ngSubmit)="onUpdate()">
+    <nz-form-item>
+      <nz-form-control>
+        <input nz-input placeholder="Emplacement Source" [(ngModel)]="updateRequest.emplacementSource" name="emplacementSource" />
+      </nz-form-control>
+    </nz-form-item>
+   
+    <nz-form-item>
+      <nz-form-control>
+        <input nz-input placeholder="Emplacement Destination" [(ngModel)]="updateRequest.emplacementDestination" name="emplacementDestination" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <input nz-input placeholder="Status" [(ngModel)]="updateRequest.status" name="status" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <input nz-input placeholder="Observation" [(ngModel)]="updateRequest.observation" name="observation" />
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" type="submit">Update</button>
+  </form>
+</div>

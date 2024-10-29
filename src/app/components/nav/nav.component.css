@@ -1,0 +1,8 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  mat-toolbar {
+  background-color: white;
+  color: black; /* Optional: Adjust text color if needed */
+}

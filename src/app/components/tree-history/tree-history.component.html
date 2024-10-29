@@ -1,0 +1,50 @@
+<!-- Formulaire de recherche avec ngSkipHydration appliqué -->
+<form nz-form style="margin-top: 20px; text-align: center;" ngSkipHydration>
+  <nz-form-item>
+    <nz-form-control>
+      <input nz-input placeholder="Enter History Name to search" nzSize="large" style="width: 20%;" />
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" nzSize="large" style="margin-left: 15px;">Search</button>
+</form>
+
+<!-- Liste des interventions -->
+<div class="container" *ngIf="history.length > 0" style="margin-top: 20px;">
+  <h2>All History Tree</h2>
+
+  <nz-table #basicTable [nzData]="history" nzBordered nzSize="middle">
+    <thead>
+      <tr>
+        <th nzWidth="150px">Emplacement Destination</th>
+        <th nzWidth="150px">Emplacement Source</th>
+        <th nzWidth="200px">Identifiant Antecedent</th>
+        <th nzWidth="200px">Observation</th>
+        <th nzWidth="150px">Status</th>
+        <th nzWidth="150px">Reperation Date</th>
+        <th nzWidth="150px">Technician</th>
+        <th nzWidth="150px">Piece Id</th>
+        <th nzWidth="150px">Client Cin</th>
+        <th nzWidth="150px">Purchase Number</th>
+        <th nzWidth="200px">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of history">
+        <td>{{ category.emplacementDestination }}</td>
+        <td>{{ category.emplacementSource }}</td>
+        <td>{{ category.identifiantAntecedent }}</td>
+        <td>{{ category.observation }}</td>
+        <td>{{ category.status }}</td>
+        <td>{{ category.reperationDate | date: 'short' }}</td>
+        <td>{{ category.technician }}</td>
+        <td>{{ category.piece.id }}</td>
+        <td>{{ category.clientCin }}</td>
+        <td>{{ category.pieceSale?.purchaseNumber }}</td>
+
+        <td>
+          <a [routerLink]="['/update-history-tree']">Update</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

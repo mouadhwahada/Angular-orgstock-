@@ -1,58 +1,52 @@
-/* CSS pour la classe container */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+.piece-update-form {
+    max-width: 500px; /* Largeur maximale du formulaire */
+    margin: 20px auto; /* Centrer le formulaire sur la page */
+    padding: 20px; /* Espacement interne */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
-/* CSS pour le titre h2 */
-.container h2 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-    text-align: center;
+.piece-update-form h2 {
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement en dessous du titre */
+    color: #333; /* Couleur du texte */
 }
 
-/* CSS pour le div contenant le label et l'input */
-.container div {
-    margin-bottom: 15px;
+.piece-update-form div {
+    margin-bottom: 15px; /* Espacement entre les champs */
 }
 
-/* CSS pour le label */
-.container label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
+.piece-update-form label {
+    display: block; /* Affichage en bloc pour aligner le texte */
+    margin-bottom: 5px; /* Espacement entre le label et l'input */
+    font-weight: bold; /* Texte en gras pour le label */
+    color: #555; /* Couleur du label */
 }
 
-/* CSS pour l'input */
-.container input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.piece-update-form input[type="text"],
+.piece-update-form input[type="number"] {
+    width: 100%; /* Largeur de l'input à 100% */
+    padding: 8px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure de l'input */
+    border-radius: 4px; /* Bords arrondis */
+    font-size: 14px; /* Taille du texte */
+    box-sizing: border-box; /* Inclure les bordures et le padding dans la largeur totale */
 }
 
-/* CSS pour le bouton */
-.container button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff; /* Couleur bleue pour le bouton */
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.piece-update-form button[type="submit"] {
+    width: 100%; /* Largeur du bouton à 100% */
+    padding: 10px; /* Espacement interne */
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Bords arrondis */
+    cursor: pointer; /* Curseur pointeur pour le bouton */
+    font-size: 16px; /* Taille du texte du bouton */
+    transition: background-color 0.3s; /* Animation de transition pour le changement de couleur */
 }
 
-.container button:hover {
-    background-color: #0056b3; /* Couleur bleue plus foncée pour le survol */
+.piece-update-form button[type="submit"]:hover {
+    background-color: #45a049; /* Couleur de fond du bouton au survol */
 }

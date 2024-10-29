@@ -1,0 +1,20 @@
+<div>
+    <h2>Sales History</h2>
+    <form (ngSubmit)="getSalesByClientCin()">
+      <div>
+        <label for="clientCinSearch">Client CIN:</label>
+        <input type="text" [(ngModel)]="clientCin" name="clientCinSearch" required>
+      </div>
+      <button type="submit">Get Sales</button>
+    </form>
+  
+    <div *ngIf="sales.length > 0">
+      <h3>Sales for {{ clientCin }}</h3>
+      <ul>
+        <li *ngFor="let sale of sales">
+          {{ sale.pieceId }} - {{ sale.quantitySold }} pieces sold on {{ sale.saleDate }}
+        </li>
+      </ul>
+    </div>
+  
+</div>

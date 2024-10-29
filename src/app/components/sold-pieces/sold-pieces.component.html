@@ -1,0 +1,49 @@
+<form nz-form style="margin-top:20px; text-align: center;">
+    <input nz-input placeholder="Enter Category Name to search" nzSize="large" style="width: 20%;" />
+    <button nz-button [nzSize]="size" nzType="primary" style="margin-left: 15px;">Search</button>
+  </form>
+  
+  <!-- Affichage du message d'erreur -->
+  <div *ngIf="errorMessage" class="error" style="color: red; text-align: center; margin-top: 20px;">
+    {{ errorMessage }}
+  </div>
+  
+  <!-- Conteneur de données si les ventes sont disponibles -->
+  <div class="container" *ngIf="sales && sales.length > 0; else noData">
+    <h2>All Sold Pieces :</h2>
+    <button class="save-Category" nz-button nzType="primary" routerLink="/sales-by-client">Sale Piece</button>
+    <table class="user-table" border="1">
+      <thead>
+        <tr>
+          <th>Client CIN</th>
+         <!--     <th>Purchase Number</th>
+      <th> Antecedent Id</th>-->
+          <th>Piece Name</th>
+          <th>Quantity Sold</th>
+          <th>Sale Date</th>
+      <!--    <th>antecedentId</th> -->
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of sales">
+          <td>{{ category.clientCin }}</td>
+          <td>{{ category.pieceName }}</td>
+          <td>{{ category.quantitySold }}</td>
+          <td>{{ category.saleDate | date:'short' }}</td>
+        <!--  <td>{{ category.antecedentId }}</td>-->
+
+          <td>
+            <button class="log-button" nz-button nzType="default" [routerLink]="['/category', category.id, 'log']">Logs</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Message quand il n'y a pas de données -->
+  <ng-template #noData>
+    <p style="text-align: center; margin-top: 20px;">No sold pieces found.</p>
+  </ng-template>
+  

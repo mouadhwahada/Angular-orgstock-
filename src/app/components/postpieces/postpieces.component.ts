@@ -11,6 +11,7 @@ import { PieceService } from '../../services/piece.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { CategoryService } from '../../services/category.service';
 
+
 @Component({
   selector: 'app-postpieces',
   standalone: true,
@@ -51,12 +52,10 @@ export class PostpiecesComponent {
       console.log(res);
     });
   }
-
   postPiece() {
     this.isSpinning = true;
     const pieceDto = {
       categoryId: this.postPieceForm.get('categoryId')!.value,
-
       namePiece: this.postPieceForm.get('NamePiece')!.value,
       description: this.postPieceForm.get('description')!.value,
       pieceState: this.postPieceForm.get('pieceState')!.value,
@@ -64,26 +63,19 @@ export class PostpiecesComponent {
       price: this.postPieceForm.get('price')!.value,
       supplier: this.postPieceForm.get('supplier')!.value
     };
-
+  
     this.categoryService.postPiece(pieceDto).subscribe(
       (res) => {
         this.isSpinning = false;
         console.log(res);
-        this.notification.success(
-          'Success',
-          'Piece posted successfully',
-          { nzDuration: 5000 }
-        );
+        this.notification.success('Success', 'Piece posted successfully', { nzDuration: 5000 });
       },
       (err) => {
         this.isSpinning = false;
         console.error(err);
-        this.notification.error(
-          'Error',
-          'Failed to post piece',
-          { nzDuration: 5000 }
-        );
+        this.notification.error('Error', 'Failed to post piece', { nzDuration: 5000 });
       }
     );
   }
+  
 }

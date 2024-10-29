@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()">
+    <label for="clientCin">Client CIN</label>
+    <input id="clientCin" [(ngModel)]="updateRequest.clientCin" name="clientCin" required />
+  
+    <div>
+      <label for="purchaseNumber">Purchase Number:</label>
+      <!-- Le champ `purchaseNumber` est désactivé pour qu'il ne soit pas modifiable -->
+      <input type="number" [(ngModel)]="updateRequest.purchaseNumber" name="purchaseNumber" disabled />
+    </div>
+    
+    <label for="emplacementSource">Source Location</label>
+    <input id="emplacementSource" [(ngModel)]="updateRequest.emplacementSource" name="emplacementSource" required />
+  
+ 
+  
+    <label for="emplacementDestination">Destination Location</label>
+    <input id="emplacementDestination" [(ngModel)]="updateRequest.emplacementDestination" name="emplacementDestination" required />
+  
+    <label for="status">Status</label>
+    <select id="status" [(ngModel)]="updateRequest.status" name="status" required>
+      <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+    </select>
+  
+    <!-- Liste déroulante pour Observation -->
+    <label for="observation">Observation</label>
+    <select id="observation" [(ngModel)]="updateRequest.observation" name="observation" required>
+      <option *ngFor="let observation of observationOptions" [value]="observation">{{ observation }}</option>
+    </select>
+  
+    <button type="submit">Update</button>
+  </form>
+  

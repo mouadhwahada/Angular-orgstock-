@@ -24,6 +24,7 @@
                 
                 <td>
                     <button class="update-button" nz-button nzType="primary" routerLink="/category/{{category.id}}">Update</button>
+                    <button class="log-button" nz-button nzType="default" [routerLink]="['/category/', category.id, 'log']">Logs</button>
 
                     <button class="delete-Piece">Delete</button>
 

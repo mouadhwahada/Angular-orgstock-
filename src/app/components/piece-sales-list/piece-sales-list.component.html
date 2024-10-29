@@ -1,0 +1,40 @@
+<!-- src/app/components/piece-sales-list/piece-sales-list.component.html -->
+<div>
+  <h2>Rechercher les ventes par CIN de client</h2>
+  
+  <!-- Formulaire de recherche -->
+  <form (ngSubmit)="getSales()">
+    <label for="clientCin">CIN du Client :</label>
+    <input id="clientCin" [(ngModel)]="clientCin" name="clientCin" required />
+    <button type="submit">Rechercher</button>
+  </form>
+
+  <!-- Affichage du message d'erreur s'il existe -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Affichage des ventes si elles existent -->
+  <div *ngIf="sales.length > 0">
+    <h3>Ventes pour le client avec CIN : {{ clientCin }}</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Quantité Vendue</th>
+          <th>Date de Vente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sale of sales">
+          <td>{{ sale.quantitySold }}</td>
+          <td>{{ sale.saleDate | date:'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Affichage si aucune vente n'est trouvée -->
+  <div *ngIf="sales.length === 0 && !errorMessage">
+    <p>Aucune vente trouvée pour ce CIN de client.</p>
+  </div>
+</div>

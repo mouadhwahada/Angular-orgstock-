@@ -1,0 +1,44 @@
+<div>
+  <h2>Create New Intervention</h2>
+  
+  <form (ngSubmit)="onSubmit()">
+    <label for="client">Client:</label>
+    <input id="client" [(ngModel)]="intervention.client" name="client" required />
+
+    <label for="clientCin">Client CIN:</label>
+    <input id="clientCin" [(ngModel)]="intervention.clientCin" name="clientCin" required />
+
+    <label for="interventionNature">Intervention Nature:</label>
+    <select id="interventionNature" [(ngModel)]="intervention.interventionNature" name="interventionNature" required>
+      <option value="To_Repair">To Repair</option>
+      <option value="To_Replace">To Replace</option>
+    </select>
+
+    <label for="technician">Technician:</label>
+    <input id="technician" [(ngModel)]="intervention.technician" name="technician" required />
+
+    <label for="purchaseNumber">Purchase Number:</label>
+    <input id="purchaseNumber" type="number" [(ngModel)]="intervention.purchaseNumber" name="purchaseNumber" required />
+
+    <!-- Sélection de la pièce vendue -->
+    <label for="pieceName">Piece Name:</label>
+    <select id="pieceName" [(ngModel)]="intervention.namePiece" name="pieceName" required>
+      <option *ngFor="let sale of sales" [value]="sale.pieceName">{{ sale.pieceName }}</option>
+    </select>
+
+    <p>Selected Piece: {{ intervention.namePiece }}</p>
+
+    <label for="result">Result:</label>
+    <select id="result" [(ngModel)]="intervention.result" name="result" required>
+      <option value="Functional">Functional</option>
+      <option value="Non_Functional">Non Functional</option>
+    </select>
+
+    <label for="observation">Observation:</label>
+    <textarea id="observation" [(ngModel)]="intervention.observation" name="observation"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p>{{ responseMessage }}</p>
+</div>

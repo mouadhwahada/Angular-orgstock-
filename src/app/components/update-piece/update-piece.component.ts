@@ -5,6 +5,8 @@ import { PieceService } from '../../services/piece.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { CommonModule } from '@angular/common';
+import { Piecedto } from '../../DTO/piecedto.model';
+import { PieceChangeLog } from '../../DTO/PieceChangeLog.model';
 
 @Component({
   selector: 'app-update-piece',
@@ -13,8 +15,57 @@ import { CommonModule } from '@angular/common';
   templateUrl: './update-piece.component.html',
   styleUrls: ['./update-piece.component.css']
 })
-export class UpdatePieceComponent implements OnInit {
+export class UpdatePieceComponent  {
+ 
+pieceId!:number;
+  pieceName: string = '';
+  piecedto: Piecedto = new Piecedto(); // Initialisez avec les valeurs appropriées
+  logs: PieceChangeLog[] = []; // Pour afficher les logs après mise à jour
+  errorMessage: string = '';
 
+  constructor(
+    private pieceService: PieceService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    // Récupérez le nom de la pièce depuis les paramètres de route
+    this.pieceName = this.route.snapshot.paramMap.get('pieceName') || '';
+  }
+
+  ngOnInit(): void {
+    this.loadPieceDetails();
+  }
+
+  loadPieceDetails(): void {
+    // Ajoutez ici la logique pour charger les détails de la pièce, si nécessaire
+  }
+
+  updatePiece(): void {
+    if (this.pieceName && this.piecedto) {
+      this.pieceService.updatePiecee(this.pieceName, this.piecedto).subscribe(
+        response => {
+          console.log('Piece updated successfully', response);
+          alert('Pièce mise à jour avec succès');
+          // Charger les logs après mise à jour
+          this.loadChangeLogs();
+        },
+        error => {
+          console.error('Error updating piece', error);
+          alert('Erreur lors de la mise à jour de la pièce');
+        }
+      );
+    }
+  }
+
+  loadChangeLogs(): void {
+    this.pieceService.getLogsByPieceId(this.pieceId).subscribe(
+      data => this.logs = data,
+      error => this.errorMessage = error.message
+    );
+  }
+}
+
+/*
   updatePieceForm!: FormGroup;
   id!: number; // Assurez-vous que `id` est initialisé correctement
   categories: any;
@@ -102,5 +153,34 @@ export class UpdatePieceComponent implements OnInit {
         );
       }
     });
-  }
+  }*/
+/*
+    pieceName: string = '';
+    piecedto: Piecedto = new Piecedto(); // Initialisez avec les valeurs appropriées
+  
+    constructor(
+      private pieceService: PieceService,
+      private route: ActivatedRoute,
+      private router: Router
+    ) {
+      // Récupérez le nom de la pièce depuis les paramètres de route
+      this.pieceName = this.route.snapshot.paramMap.get('pieceName') || '';
+    }
+  
+    updatePiece() {
+      if (this.pieceName && this.piecedto) {
+        this.pieceService.updatePiecee(this.pieceName, this.piecedto).subscribe(
+          response => {
+            console.log('Piece updated successfully', response);
+            alert('Pièce mise à jour avec succès');
+            this.router.navigate(['/pieces']); // Redirection vers la liste des pièces
+          },
+          error => {
+            console.error('Error updating piece', error);
+            alert('Erreur lors de la mise à jour de la pièce');
+          }
+        );
+      }
+    }
 }
+*/

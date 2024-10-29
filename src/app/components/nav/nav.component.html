@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+  <!-- Replace the menu_book icon with the new menu structure -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <!-- The mat-menu structure for the dropdown menu -->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+
+  <!-- Toolbar title -->
+  <span>Be Wireless Solutions</span>
+  
+  <!-- Spacer to push items to the right -->
+  <span class="example-spacer"></span>
+
+  <!-- Navigation buttons at the right side -->
+  <!-- Button for navigating to the category path -->
+  <button mat-button class="example-icon" [routerLink]="'/'">
+    <mat-icon>category</mat-icon>
+  </button>
+  <button mat-button class="example-icon" [routerLink]="'/show-intervention'">
+    <mat-icon>history</mat-icon>
+  </button>
+
+  <!-- Button for navigating to the pieces path -->
+  <button mat-button class="example-icon" [routerLink]="'/pieces'">
+    <mat-icon>build</mat-icon>
+  </button>
+
+<button mat-button class="example-icon" [routerLink]="'/History-Tree'">
+  <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-button class="example-icon" [routerLink]="'/intervention-history'">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <button mat-button class="example-icon" [routerLink]="'/sold-pieces'">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
+</mat-toolbar>

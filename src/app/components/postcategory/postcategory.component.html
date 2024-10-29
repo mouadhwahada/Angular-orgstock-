@@ -1,37 +1,38 @@
-<div style=" margin-top: 50px;">
+<div style="margin-top: 50px; display: flex; justify-content: center; align-items: center; height: calc(100vh - 50px);">
     <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working.">
-    <div class="parent">
-    <div class="child">
-    <div nz-row class="imgDiv">
-    <h2 style="margin-left: 230px;">Add Category</h2>
-    </div>
-    
-    <form nz-form [formGroup]="categoryForm">
-    <div nz-row>
-    
-    I
-    
-    <div nz-col nzSpan="24">
-    <nz-form-item>
-    <nz-form-control nzHasFeedback  nzErrorTip="This Input Is F">
-    <input nz-input placeholder="Name" formControlName="name"/>
-    </nz-form-control>
-    </nz-form-item>
-    </div>
-
-    
-    <div nz-col nzSpan="24">
-        <nz-form-item>
-        <nz-form-control nzHasFeedback  nzErrorTip="This Input Is F">
-        <input nz-input placeholder="Description" formControlName="description" />
-        </nz-form-control>
-        </nz-form-item>
+      <div class="parent">
+        <div class="child">
+          <div nz-row class="imgDiv" style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <h2>Add Category</h2>
+          </div>
+          
+          <form nz-form [formGroup]="categoryForm">
+            <div nz-row>
+              <div nz-col nzSpan="24">
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="6" nzRequired>Name</nz-form-label>
+                  <nz-form-control [nzSpan]="14" nzHasFeedback nzErrorTip="This Input Is Required">
+                    <input nz-input placeholder="Name" formControlName="name" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+  
+              <div nz-col nzSpan="24">
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="6" nzRequired>Description</nz-form-label>
+                  <nz-form-control [nzSpan]="14" nzHasFeedback nzErrorTip="This Input Is Required">
+                    <input nz-input placeholder="Description" formControlName="description" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+  
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+              <button nz-button class="post-button" [nzType]="'primary'" (click)="postCategory()">Add</button>
+            </div>
+          </form>
         </div>
-    </div>
-
-    <button nz-button class="login-form-button login-form-margin"  (click)="postCategory()">Add</button>
-    </form>
-    </div>
-    </div>
+      </div>
     </nz-spin>
-</div>
+  </div>
+  

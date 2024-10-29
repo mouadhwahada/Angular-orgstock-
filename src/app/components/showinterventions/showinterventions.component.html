@@ -1,0 +1,89 @@
+<!--<form [formGroup]="interventionForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="pieceId">Piece ID:</label>
+      <input id="pieceId" formControlName="pieceId" type="number">
+    </div>
+    <button type="submit">Get Interventions</button>
+  </form>
+  
+  <table *ngIf="interventions.length > 0">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Intervention Date</th>
+        <th>Nature</th>
+        <th>Technician</th>
+        <th>Result</th>
+        <th>Observation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let intervention of interventions">
+        <td>{{ intervention.client }}</td>
+        <td>{{ intervention.interventionDate | date: 'short' }}</td>
+        <td>{{ intervention.interventionNature }}</td>
+        <td>{{ intervention.technician }}</td>
+        <td>{{ intervention.result }}</td>
+        <td>{{ intervention.observation }}</td>
+      </tr>
+    </tbody>
+  </table>
+-->
+
+
+
+
+<!--
+ Formulaire de recherche de catégorie 
+<form nz-form style="margin-top: 20px; text-align: center;">
+  <nz-form-item>
+    <nz-form-control>
+      <input nz-input placeholder="Enter Category Name to search" nzSize="large" style="width: 20%;" />
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" nzSize="large" style="margin-left: 15px;">Search</button>
+</form>
+<button class="save-Category" routerLink="/intervention-history">Add Intervention</button>
+
+ Liste des interventions -->
+<div class="container" *ngIf="interventions.length > 0" style="margin-top: 20px;">
+  <h2>All Interventions</h2>
+  <button nz-button nzType="primary" class="save-Category" routerLink="/intervention-history" style="margin-bottom: 20px;">Add Intervention</button>
+
+  <nz-table #basicTable [nzData]="interventions" nzBordered nzSize="middle">
+    <thead>
+      <tr>
+        <th nzWidth="150px">Client</th>
+        <th nzWidth="150px">Client CIN</th>
+        <th nzWidth="200px">Intervention Date</th>
+        <th nzWidth="200px">Intervention Nature</th>
+        <th nzWidth="150px">Observation</th>
+        <th nzWidth="150px">Piece Name</th>
+        <th nzWidth="150px">Purchase Number</th>
+        <th nzWidth="150px">Result</th>
+        <th nzWidth="150px">Technician</th>
+        <th nzWidth="200px">Last Intervention Id</th>
+        <th nzWidth="200px">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of interventions">
+        <td>{{ category.client }}</td>
+        <td>{{ category.clientCin }}</td>
+        <td>{{ category.interventionDate | date: 'short' }}</td>
+        <td>{{ category.interventionNature }}</td>
+        <td>{{ category.observation }}</td>
+        <td>{{ category.pieceName }}</td>
+        <td>{{ category.purchaseNumber }}</td>
+        <td>{{ category.result }}</td>
+        <td>{{ category.technician }}</td>
+        <td>{{ category.Last_id }}</td>
+        <td>
+          <button nz-button nzType="primary" class="update-button" routerLink="/intervention-history">Update</button>
+      <!--    <button nz-button nzType="default" class="log-button" [routerLink]="['/category/', category.id, 'log']">Logs</button>
+          <button nz-button nzType="danger" class="delete-Piece">Delete</button>-->
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

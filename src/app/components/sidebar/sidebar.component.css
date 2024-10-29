@@ -1,0 +1,16 @@
+/* styles.css */
+.bootstrap-wrapper {
+    display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
+  }
+  
+  .sidebar {
+    width: 250px; /* Largeur de la barre latérale */
+    padding: 10px; /* Espacement à l'intérieur */
+    height: 100vh; /* Hauteur de la barre latérale pour occuper toute la fenêtre */
+  }
+  
+  .content {
+    flex-grow: 1; /* Le contenu prendra le reste de l'espace disponible */
+    padding: 20px; /* Ajouter un peu d'espacement autour du contenu */
+  }
+  

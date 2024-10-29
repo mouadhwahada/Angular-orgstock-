@@ -1,0 +1,25 @@
+<div *ngIf="errorMessage; else logsList">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<ng-template #logsList>
+  <h2>Change Logs for Piece ID: {{ pieceId }}</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Change Type</th>
+        <th>Old Value</th>
+        <th>New Value</th>
+        <th>Change Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs">
+        <td>{{ log.changeType }}</td>
+        <td>{{ log.oldValue }}</td>
+        <td>{{ log.newValue }}</td>
+        <td>{{ log.changeDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

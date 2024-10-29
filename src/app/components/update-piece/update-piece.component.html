@@ -1,4 +1,4 @@
-<div class="container"> 
+<!--<div class="container"> 
     <h2>Update Piece</h2>
     <form [formGroup]="updatePieceForm" (ngSubmit)="updatePiece()">
         <div>
@@ -16,4 +16,72 @@
         </div>
         <button type="submit">Update Piece</button>
     </form>
+</div>
+-->
+<!-- piece-update.component.html -->
+<div class="piece-update-form">
+  <h2>Update Piece: {{ pieceName }}</h2>
+
+  <form (ngSubmit)="updatePiece()">
+    <div>
+      <label for="state">Piece State:</label>
+      <select id="state" [(ngModel)]="piecedto.pieceState" name="pieceState">
+        <option value="SOLD">SOLD</option>
+        <option value="IN_STOCK">IN_STOCK</option>
+        <option value="OUT_OF_STOCK">OUT_OF_STOCK</option>
+        <option value="VENDU">VENDU</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="namePiece">Piece Name:</label>
+      <input id="namePiece" type="text" [(ngModel)]="piecedto.namePiece" name="namePiece" />
+    </div>
+    
+    <div>
+      <label for="quantity">Quantity:</label>
+      <input id="quantity" type="number" [(ngModel)]="piecedto.quantity" name="quantity" />
+    </div>
+
+    <div>
+      <label for="description">Description:</label>
+      <input id="description" type="text" [(ngModel)]="piecedto.description" name="description" />
+    </div>
+
+    <div>
+      <label for="price">Price:</label>
+      <input id="price" type="number" [(ngModel)]="piecedto.price" name="price" />
+    </div>
+
+  
+
+    <button type="submit">Update</button>
+  </form>
+
+  <!-- Affichage des logs 
+  <div *ngIf="errorMessage; else logsList">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <ng-template #logsList>
+    <h2>Change Logs for Piece Name: {{ pieceName }}</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Change Type</th>
+          <th>Old Value</th>
+          <th>New Value</th>
+          <th>Change Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let log of logs">
+          <td>{{ log.changeType }}</td>
+          <td>{{ log.oldValue }}</td>
+          <td>{{ log.newValue }}</td>
+          <td>{{ log.changeDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>-->
 </div>

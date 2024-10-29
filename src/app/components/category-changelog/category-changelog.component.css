@@ -1,0 +1,53 @@
+/* Style pour la container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style pour le titre */
+  .container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Style pour la table des journaux de modifications */
+  .change-log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .change-log-table thead {
+    background-color: #f4f4f4;
+  }
+  
+  .change-log-table th, .change-log-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .change-log-table th {
+    background-color: #e0e0e0;
+    color: #555;
+  }
+  
+  .change-log-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .change-log-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Style pour le message quand il n'y a pas de logs */
+  .container p {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  

@@ -19,7 +19,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './piece-changelog.component.css'
 })
 export class PieceChangelogComponent {
-  pieceId!: number;
+  /*pieceId!: number;
   changeLogs: any[] = [];
 
   constructor(private route: ActivatedRoute, private pieceService: PieceService) { }
@@ -40,5 +40,28 @@ export class PieceChangelogComponent {
         console.error('Error fetching change logs:', err);
       }
     });
-  }
+  }*/
+
+    pieceId!: number;
+    changeLogs: any[] = [];
+  
+    constructor(private route: ActivatedRoute, private pieceService: PieceService) {}
+  
+    ngOnInit(): void {
+      this.route.params.subscribe(params => {
+        this.pieceId = +params['id'];
+        this.loadChangeLogs();
+      });
+    }
+  
+    loadChangeLogs(): void {
+      this.pieceService.getChangeLog(this.pieceId).subscribe({
+        next: (logs) => {
+          this.changeLogs = logs;
+        },
+        error: (err) => {
+          console.error('Error fetching change logs:', err);
+        }
+      });
+    }
 }
