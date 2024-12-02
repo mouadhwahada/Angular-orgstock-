@@ -25,7 +25,7 @@ export class PieceService {
 
   // Méthode pour obtenir les logs par ID de pièce
   getLogsByPieceId(pieceId: number): Observable<PieceChangeLog[]> {
-    return this.http.get<PieceChangeLog[]>(`${this.baseeUrl}/pieceId/${pieceId}`);
+    return this.http.get<PieceChangeLog[]>(`${this.baseeUrl}/by-piece-id/${pieceId}`);
   }
 
   // Méthode pour obtenir les logs par nom de pièce
